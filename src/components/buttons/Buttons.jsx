@@ -1,14 +1,16 @@
+import { useState } from 'react'
 import { languages } from '../../languages'
 import style from './Buttons.module.css'
 
-export function Buttons() {
+export function Buttons({ onClick }) {
+
 
     return (
         <>
             <ul>
                 {languages.map((language) =>
                     <li key={language.id}>
-                        <button className={style.button}>{language.title}</button>
+                        <button onClick={onClick} className={style.button}>{language.title}</button>
                     </li>)}
             </ul>
         </>
