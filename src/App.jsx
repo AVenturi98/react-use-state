@@ -1,18 +1,15 @@
-// import { useState } from 'react'
+import { useState } from 'react'
 import { Buttons } from './components/buttons/Buttons'
 import { Card } from './components/card/Card'
 import { languages } from './languages'
+import style from './components/buttons/Buttons.module.css'
 
 
 
-function App({ title }) {
 
-  // const [textReading, setReadingText] = useState(true)
+function App({ item }) {
 
-  function check() {
-
-    console.log({ title })
-  }
+  const [textReading, setReadingText] = useState(0)
 
 
   return (
@@ -20,13 +17,21 @@ function App({ title }) {
       <div className='container'>
         <h1>Lear Web Development</h1>
       </div>
-      <Buttons onClick={check} />
 
+      <ul>
+        {languages.map((language, i) =>
+          <li key={language.id}>
+            <Buttons className={i === textReading ? style.btnActive : ''} callBack={() => setReadingText(i)} item={language.title} />
+          </li>)}
 
+      </ul>
 
-      <Card />
+      <Card item={languages[textReading]} />
+
     </>
   )
 }
 
 export default App
+
+//Se nessun linguaggio è selezionato, la card del dettaglio mostra “nessun linguaggio selezionato”

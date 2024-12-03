@@ -22,3 +22,8 @@ body {
 .container {
   padding: 1.5rem
 }
+
+p {
+  padding: 1.5rem;
+  color: grey
+}

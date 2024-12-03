@@ -1,13 +1,19 @@
 .button {
-    color: dodgerblue;
+    color: darkblue;
     background-color: darkkhaki;
     padding: 1rem;
     border-radius: 10px;
 }
 
+.btnActive {
+    background-color: #555555;
+    border: 1px solid darkkhaki;
+    color: darkkhaki;
+}
+
 ul {
     display: flex;
     align-items: center;
-    justify-content: center;
-    gap: 10px
+    gap: 10px;
+    padding: 1.5rem
 }
